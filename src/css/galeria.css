@@ -1,0 +1,254 @@
+/* .galeria-banner extiende .page-banner — sobreescribe solo la altura */
+.galeria-banner {
+  height: clamp(100px, 20vw, 400px);
+}
+
+/* .galeria-container extiende .bg-section — solo propiedades específicas */
+.galeria-container {
+  background-image: url('/img/fondoGaleria.webp');
+}
+
+.galeria-header {
+  padding: 8% 10% 0;
+  color: var(--color-verde);
+}
+
+.galeria-header h1 {
+  font-size: var(--text-4xl);
+}
+.galeria-header p {
+  font-size: var(--text-md);
+}
+
+/* ── Secciones por categoría ── */
+.galeria-seccion {
+  padding: 0 5% 4%;
+}
+
+.galeria-seccion-titulo {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  color: var(--color-verde);
+  padding: 2.5rem 0 0.75rem;
+  border-left: 5px solid var(--color-cafe);
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Grid de imágenes ── */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(160px, 25vw, 320px), 1fr)
+  );
+  gap: var(--gap-sm);
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  /* Altura mínima garantizada mientras el placeholder está activo */
+  min-height: clamp(150px, 20vw, 320px);
+}
+
+/* ── Placeholder diferido (visible solo si la imagen tarda >300ms en cargar) ── */
+/* galeria.js añade .show-placeholder al .galeria-item con un setTimeout de 300ms
+   que se cancela si la imagen carga antes. En conexiones rápidas el ::before
+   nunca se hace visible, eliminando el flash. */
+.galeria-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  z-index: 1;
+
+  /* Fondo beige con ícono SVG centrado */
+  background-color: var(--color-beige);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 48 48'%3E%3Crect x='6' y='10' width='36' height='28' rx='3' ry='3' fill='none' stroke='%23204032' stroke-width='2.5'/%3E%3Ccircle cx='17' cy='20' r='4' fill='none' stroke='%23204032' stroke-width='2.5'/%3E%3Cpolyline points='6,33 16,22 24,30 31,24 42,33' fill='none' stroke='%23204032' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: clamp(56px, 8vw, 80px);
+
+  /* Transición de salida sincronizada con la imagen */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Activar placeholder solo cuando JS detecta que la carga es lenta (>300ms) */
+.galeria-item.show-placeholder::before {
+  opacity: 1;
+}
+
+/* Ocultar placeholder cuando la imagen terminó de cargar.
+   :has() es la solución moderna (Chromium, Safari, Firefox 121+).
+   .img-loaded es el fallback para Firefox < 121: galeria.js añade
+   la clase al .galeria-item padre cuando img dispara el evento load. */
+.galeria-item:has(img.loaded)::before,
+.galeria-item.img-loaded::before {
+  opacity: 0;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: clamp(150px, 20vw, 320px);
+  object-fit: cover;
+  position: relative;
+  z-index: 2; /* sobre el placeholder */
+  /* Lazy loading: se mostrará con opacidad 0 hasta cargar */
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.3s ease;
+}
+
+.galeria-item img.loaded {
+  opacity: 1;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+/* Desktop: imagen centrada con botones flotantes a los lados */
+.lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-inner img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* En desktop .lightbox-nav es invisible — los botones se posicionan absolute */
+.lightbox-nav {
+  display: contents;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  background: var(--color-beige);
+  color: var(--color-verde);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  line-height: 0;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-beige);
+  color: var(--color-verde);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  line-height: 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lightbox-prev {
+  left: -50px;
+}
+.lightbox-next {
+  right: -50px;
+}
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: var(--color-gris);
+}
+
+/* ── Lightbox móvil ── */
+@media (max-width: 767px) {
+  .lightbox {
+    padding: 4% 2%;
+    align-items: center;
+  }
+
+  .lightbox-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 96vw;
+    max-height: 95vh;
+  }
+
+  .lightbox-close {
+    position: static;
+    align-self: flex-end;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .lightbox-inner img {
+    max-height: 68vh;
+    max-width: 92vw;
+    width: auto;
+  }
+
+  /* Fila de navegación: prev y next en la misma fila horizontal */
+  .lightbox-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    position: static;
+    transform: none;
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+    line-height: 0;
+    background: var(--color-beige);
+    color: var(--color-verde);
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+}

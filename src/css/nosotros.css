@@ -1,0 +1,351 @@
+/* .nosotros-banner extiende .page-banner — sobreescribe solo la altura */
+.nosotros-banner {
+  height: clamp(150px, 30vw, 600px);
+}
+
+/* ── Historia ── */
+.historia-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.historia-content {
+  flex: 0 0 55%;
+  padding: 5%;
+  color: var(--color-verde);
+}
+
+.historia-content h3 {
+  font-size: var(--text-2xl);
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.historia-content p {
+  font-size: var(--text-base);
+  text-align: justify;
+}
+
+.historia-img {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.historia-img img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .historia-content {
+    flex: 1 1 100%;
+  }
+  .historia-img {
+    flex: 1 1 100%;
+  }
+}
+
+/* ── Wrapper "Quiénes somos" ── */
+/*
+  quienes-wrapper agrupa .seccion-titulo + .somos-container + .identidad-container
+  bajo un único background-image del helicóptero, exactamente como hace .equipo-wrapper
+  para la sección del equipo. Antes sólo .seccion-titulo tenía el fondo, dejando
+  los párrafos y las tarjetas de misión/visión sobre fondo blanco sin continuidad.
+
+  El fondo se mantiene fijo en background-position: center 40% para que el helicóptero
+  aparezca en la parte superior (zona del título), desplazándose naturalmente hacia
+  la parte inferior conforme el wrapper crece con el contenido.
+
+  overlay ::before reutiliza el mismo degradado lateral que tenía .seccion-titulo
+  para suavizar los bordes izquierdo y derecho del fondo.
+*/
+.quienes-wrapper {
+  position: relative;
+  width: 100%;
+  background-image: url('/img/fondoHelicoptero.webp');
+  background-size: cover;
+  background-position: center 15%;
+  background-attachment: scroll; /* 'fixed' falla en iOS; 'scroll' es el comportamiento estándar */
+}
+
+.quienes-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 18%,
+    rgba(255, 255, 255, 0) 82%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Los hijos del wrapper necesitan estar sobre el overlay */
+.quienes-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Sección "Quienes somos" — título centrado dentro del wrapper ── */
+.seccion-titulo {
+  text-align: center;
+  padding: 3% 5%;
+  position: relative;
+  /*
+    fondoHelicoptero.webp mide 1490x1211px.
+    La altura mínima asegura que el título tenga espacio visual suficiente.
+    El fondo lo gestiona ahora .quienes-wrapper (padre).
+  */
+  min-height: clamp(60px, 8vw, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image eliminado: lo gestiona .quienes-wrapper */
+}
+
+/* Glassmorphism sutil sobre el fondo del helicóptero — sólo en desktop */
+@media (min-width: 768px) {
+  .seccion-titulo {
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.35
+    ); /* fallback si backdrop-filter no soportado */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 8px;
+    padding: 2% 4%;
+  }
+}
+
+/*
+  ::before eliminado de .seccion-titulo: el overlay degradado
+  ahora vive en .quienes-wrapper::before, que cubre todo el wrapper
+  incluyendo .somos-container e .identidad-container.
+*/
+
+.seccion-titulo h2 {
+  font-family: var(--font-titles);
+  font-weight: 900;
+  font-size: var(--text-3xl);
+  color: var(--color-verde); /* móvil: verde sin shadow */
+  position: relative;
+  z-index: 2;
+}
+
+/* Desktop: blanco con shadow sobre el fondo del helicóptero */
+@media (min-width: 768px) {
+  .seccion-titulo h2 {
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* ── Párrafos "Somos" ── */
+.somos-container {
+  display: flex;
+  gap: 6%;
+  margin: 0 3%;
+  flex-wrap: wrap;
+}
+
+.parrafo {
+  flex: 1 1 250px;
+  padding: 5%;
+}
+.parrafo p {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-verde);
+  text-align: justify;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.85);
+}
+
+/* ── Misión y Visión ── */
+.identidad-container {
+  display: flex;
+  gap: 10%;
+  margin: 5% 8% 5% 10%;
+  flex-wrap: wrap;
+}
+
+.identidad-content {
+  flex: 1 1 250px;
+  padding: 5% 3%;
+  border-radius: 30px;
+  box-shadow:
+    5px 5px 50px rgba(0, 0, 0, 0.2),
+    2px 5px 30px rgba(0, 0, 0, 0.1);
+  background-color: rgba(32, 64, 50, 0.25);
+  text-align: center;
+  position: relative;
+}
+
+/* Contraste mejorado en títulos Misión / Visión —
+   color beige para legibilidad sobre el fondo semitransparente del wrapper */
+.identidad-content h3 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-2xl);
+  color: var(--color-beige);
+  margin-bottom: 5%;
+}
+
+.identidad-content p {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-verde);
+  margin-top: 10px;
+}
+
+.identidad-mision::before,
+.identidad-vision::before {
+  content: '';
+  position: absolute;
+  top: -28px;
+  left: -28px;
+  width: clamp(70px, 9vw, 120px);
+  height: clamp(70px, 9vw, 120px);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.identidad-mision::before {
+  background-image: url('/img/icon-mision.webp');
+}
+
+.identidad-vision::before {
+  background-image: url('/img/icon-vision.webp');
+}
+
+@media (max-width: 767px) {
+  .identidad-container {
+    margin: 15% 8% 5% 13%;
+  }
+  .identidad-content {
+    margin-bottom: 20%;
+  }
+  .identidad-mision::before,
+  .identidad-vision::before {
+    top: -28px;
+    left: -28px;
+  }
+
+  /* Títulos Misión / Visión: blanco en móvil para contraste sobre fondo sin imagen */
+  .identidad-content h3 {
+    color: #fff;
+  }
+
+  /* Ocultar fondo del helicóptero en móvil */
+  .quienes-wrapper {
+    background-image: none;
+  }
+
+  .quienes-wrapper::before {
+    display: none;
+  }
+}
+
+/* .vineta-container movida a components.css — es un componente compartido */
+
+/* ── Equipo ── */
+/* .equipo-wrapper es el único elemento con background-image —
+   elimina el corte visible que ocurría cuando .equipo-titulo y
+   .equipo-container tenían cada uno su propia instancia del fondo. */
+.equipo-wrapper {
+  width: 100%;
+  background-image: url('/img/fondoEquipo.webp');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  /* sin display:flex — los hijos son block de ancho 100%,
+     background-size:cover opera sobre el alto real del contenido */
+}
+
+/* FIX desktop: el párrafo descriptivo y el título forman parte de .equipo-titulo,
+   que recibe el fondo del wrapper. Se asegura que en desktop el texto sea visible
+   y esté correctamente separado de la tarjeta con padding inferior generoso. */
+.equipo-titulo {
+  width: 100%;
+  padding: clamp(3%, 5vw, 5%) 2% clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--gap-sm);
+  color: var(--color-beige);
+  box-sizing: border-box;
+}
+
+.equipo-titulo h3 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--gap-sm);
+}
+
+.equipo-titulo p {
+  font-size: var(--text-md);
+  /* FIX desktop: max-width con 50vw resulta en ~700px en pantallas anchas,
+     suficiente para que el párrafo sea legible y no quede muy comprimido */
+  max-width: clamp(320px, 60vw, 900px);
+  padding-bottom: 0; /* el gap del flex ya provee la separación */
+}
+
+.equipo-container {
+  padding: 0 2% clamp(3%, 5vw, 5%);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: var(--gap-md);
+}
+
+/* Lista de miembros — centrada con fondo */
+.card-scroll {
+  background-color: var(--color-beige);
+  border-radius: 30px;
+  /* FIX desktop: ancho aumentado para que la tarjeta sea más prominente
+     y el fondo del wrapper no quede excesivamente expuesto a los lados */
+  width: clamp(280px, 60vw, 800px);
+  height: clamp(220px, 45vh, 560px);
+  overflow: hidden;
+  padding: 20px;
+  color: var(--color-verde);
+  margin: 0 auto;
+}
+
+.scroll-content {
+  overflow-y: auto;
+  max-height: 100%;
+  padding: 10px 20px;
+  scrollbar-color: var(--color-verde) var(--color-beige);
+  scrollbar-width: thin;
+}
+
+.name-scroll {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  margin-bottom: clamp(6px, 1vw, 12px);
+  padding: 2px 0 2px clamp(18px, 2vw, 28px);
+  position: relative;
+}
+
+.name-scroll::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: clamp(8px, 1.2vw, 20px);
+  height: clamp(8px, 1.2vw, 20px);
+  background-image: url('/img/vinetaEquipo.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+}

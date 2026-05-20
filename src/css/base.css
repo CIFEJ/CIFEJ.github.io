@@ -1,0 +1,79 @@
+/* Fuentes self-hosted vía Fontsource (variables). Sin petición a Google.
+   Raleway: pesos 400/700/900 (normal) — itálica no se usa en el sitio.
+   Nunito:  pesos 400/600/700 (normal). */
+@import '@fontsource-variable/raleway';
+@import '@fontsource-variable/nunito';
+
+:root {
+  /* Colores */
+  --color-beige: #efe8d0;
+  --color-verde: #204032;
+  --color-cafe: #503a34;
+  --color-gris: #cfcfcf;
+
+  /* Tipografías */
+  --font-titles: 'Raleway', sans-serif; /* h1–h3, botones, citas */
+  --font-body: 'Nunito', sans-serif; /* párrafos, listas, UI  */
+
+  /* Tipografía fluida — elimina la mayoría de overrides por breakpoint */
+  --text-sm: clamp(0.8rem, 1.8vw, 1rem);
+  --text-base: clamp(0.95rem, 2vw, 1.1rem);
+  --text-md: clamp(1rem, 2.2vw, 1.25rem);
+  --text-lg: clamp(1.1rem, 2.5vw, 1.5rem);
+  --text-xl: clamp(1.25rem, 3vw, 1.75rem);
+  --text-2xl: clamp(1.5rem, 4vw, 2.25rem);
+  --text-3xl: clamp(1.75rem, 5vw, 3rem);
+  --text-4xl: clamp(2rem, 6.5vw, 5rem);
+
+  /* Espaciado */
+  --gap-sm: clamp(0.5rem, 2vw, 1rem);
+  --gap-md: clamp(1rem, 3vw, 2rem);
+  --gap-lg: clamp(1.5rem, 4vw, 3rem);
+
+  /* Nombre institucional — token dedicado */
+  --text-inst: clamp(0.95rem, 2.4vw, 1.35rem);
+}
+
+/* Reset mínimo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-verde);
+  overflow-x: hidden;
+  color-scheme: light;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Estado inicial de animaciones Motion One.
+   Vivir en CSS (no en JS) evita FOUC: si el script llega tarde,
+   el elemento ya era invisible por hoja de estilos y no parpadea.
+   La clase se remueve en main.js justo antes de animar. */
+[data-motion].motion-pending {
+  opacity: 0;
+}

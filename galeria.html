@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería — Colegio de Ingenieros Forestales de Jalisco</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon/favicon_multi.ico">
+  <link rel="stylesheet" href="/src/css/main.css">
+</head>
+<body>
+
+  <header>
+    <!-- FIX: data-motion="fade-down" eliminado — el header ya está en viewport al cargar;
+         Motion One lo dejaba con opacity:0 si inView no disparaba a tiempo en Android -->
+    <div class="header-image">
+      <p>Colegio de Ingenieros Forestales<span class="inst-break">del Estado de Jalisco A.C</span></p>
+      <a href="/" aria-label="Ir al inicio"><img src="/img/logo.svg" alt="Logo del Colegio de Ingenieros Forestales"></a>
+    </div>
+    <nav class="menu" aria-label="Navegación principal">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html" class="active">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="galeria-banner page-banner" data-motion="fade-up">
+      <img src="/img/bannerGaleria.webp" alt="" class="banner-bg" aria-hidden="true" fetchpriority="high">
+    </div>
+
+    <div class="galeria-container bg-section">
+      <div class="galeria-header" data-motion="fade-right">
+        <h1 class="section-title">GALERÍA DE PROYECTOS</h1>
+        <p class="section-body">Explora nuestra galería de proyectos y conoce cómo estamos marcando la diferencia en la gestión de los recursos naturales.</p>
+      </div>
+
+      <!-- Secciones por categoría -->
+
+      <!-- Inventario -->
+      <section class="galeria-seccion" id="inventario">
+        <h2 class="galeria-seccion-titulo" data-motion="fade-right">Inventario</h2>
+        <div class="galeria-grid">
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img001_13_11zon.webp" alt="Inventario forestal 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img002_14_11zon.webp" alt="Inventario forestal 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img003_15_11zon.webp" alt="Inventario forestal 3"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img004_16_11zon.webp" alt="Inventario forestal 4"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img005_17_11zon.webp" alt="Inventario forestal 5"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img006_18_11zon.webp" alt="Inventario forestal 6"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img007_19_11zon.webp" alt="Inventario forestal 7"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img008_20_11zon.webp" alt="Inventario forestal 8"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img-parcelas01_9_11zon.webp" alt="Parcelas de inventario 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img-parcelas02_10_11zon.webp" alt="Parcelas de inventario 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img-parcelas03_11_11zon.webp" alt="Parcelas de inventario 3"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img-parcelas04_12_11zon.webp" alt="Parcelas de inventario 4"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img-modelo01_6_11zon.webp" alt="Modelo de inventario 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img-modelo02_7_11zon.webp" alt="Modelo de inventario 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Inventarios/img-modelo03_8_11zon.webp" alt="Modelo de inventario 3"></div>
+        </div>
+      </section>
+
+      <!-- Aprovechamiento -->
+      <section class="galeria-seccion" id="aprovechamiento">
+        <h2 class="galeria-seccion-titulo" data-motion="fade-right">Aprovechamiento</h2>
+        <div class="galeria-grid">
+          <div class="galeria-item"><img data-src="/img/galeria/Aprovechamiento/img001.webp" alt="Aprovechamiento forestal 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Aprovechamiento/img002.webp" alt="Aprovechamiento forestal 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Aprovechamiento/img003.webp" alt="Aprovechamiento forestal 3"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Aprovechamiento/img004.webp" alt="Aprovechamiento forestal 4"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Aprovechamiento/img005.webp" alt="Aprovechamiento forestal 5"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Aprovechamiento/img006.webp" alt="Aprovechamiento forestal 6"></div>
+        </div>
+      </section>
+
+      <!-- Transformación -->
+      <section class="galeria-seccion" id="transformacion">
+        <h2 class="galeria-seccion-titulo" data-motion="fade-right">Transformación</h2>
+        <div class="galeria-grid">
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img001_36_11zon.webp" alt="Transformación forestal 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img002_37_11zon.webp" alt="Transformación forestal 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img003_38_11zon.webp" alt="Transformación forestal 3"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img004_39_11zon.webp" alt="Transformación forestal 4"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img005_40_11zon.webp" alt="Transformación forestal 5"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img006_41_11zon.webp" alt="Transformación forestal 6"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img007_42_11zon.webp" alt="Transformación forestal 7"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img008_43_11zon.webp" alt="Transformación forestal 8"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img009_44_11zon.webp" alt="Transformación forestal 9"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img010_45_11zon.webp" alt="Transformación forestal 10"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img011_46_11zon.webp" alt="Transformación forestal 11"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img012_47_11zon.webp" alt="Transformación forestal 12"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img013_48_11zon.webp" alt="Transformación forestal 13"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img014_49_11zon.webp" alt="Transformación forestal 14"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Transformacion/img015_50_11zon.webp" alt="Transformación forestal 15"></div>
+        </div>
+      </section>
+
+      <!-- Reforestación -->
+      <section class="galeria-seccion" id="reforestacion">
+        <h2 class="galeria-seccion-titulo" data-motion="fade-right">Reforestación</h2>
+        <div class="galeria-grid">
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img001_27_11zon.webp" alt="Reforestación 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img002_28_11zon.webp" alt="Reforestación 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img003_29_11zon.webp" alt="Reforestación 3"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img004_30_11zon.webp" alt="Reforestación 4"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img005_31_11zon.webp" alt="Reforestación 5"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img006_32_11zon.webp" alt="Reforestación 6"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img007_33_11zon.webp" alt="Reforestación 7"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img008_34_11zon.webp" alt="Reforestación 8"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Reforestacion/img009_35_11zon.webp" alt="Reforestación 9"></div>
+        </div>
+      </section>
+
+      <!-- Manejo de Plagas -->
+      <section class="galeria-seccion" id="plagas">
+        <h2 class="galeria-seccion-titulo" data-motion="fade-right">Manejo de Plagas</h2>
+        <div class="galeria-grid">
+          <div class="galeria-item"><img data-src="/img/galeria/Plagas/img001_21_11zon.webp" alt="Manejo de plagas 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Plagas/img002_22_11zon.webp" alt="Manejo de plagas 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Plagas/img003_23_11zon.webp" alt="Manejo de plagas 3"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Plagas/img004_24_11zon.webp" alt="Manejo de plagas 4"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Plagas/img005_25_11zon.webp" alt="Manejo de plagas 5"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Plagas/img006_26_11zon.webp" alt="Manejo de plagas 6"></div>
+        </div>
+      </section>
+
+      <!-- Manejo de Fuego -->
+      <section class="galeria-seccion" id="fuego">
+        <h2 class="galeria-seccion-titulo" data-motion="fade-right">Manejo de Fuego</h2>
+        <div class="galeria-grid">
+          <div class="galeria-item"><img data-src="/img/galeria/Fuego/img001_1_11zon.webp" alt="Manejo de fuego 1"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Fuego/img002_2_11zon.webp" alt="Manejo de fuego 2"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Fuego/img003_3_11zon.webp" alt="Manejo de fuego 3"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Fuego/img004_5_11zon.webp" alt="Manejo de fuego 4"></div>
+          <div class="galeria-item"><img data-src="/img/galeria/Fuego/img005_4_11zon.webp" alt="Manejo de fuego 5"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Lightbox (sin dependencias) -->
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" aria-label="Cerrar">✕</button>
+        <img src="" alt="">
+        <div class="lightbox-nav">
+          <button class="lightbox-prev" aria-label="Anterior">&#8249;</button>
+          <button class="lightbox-next" aria-label="Siguiente">&#8250;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA — separado del grid, ya no rompe la sección -->
+    <div class="contacto-container" data-motion="zoom-in">
+      <div class="contacto-content">
+        <h3 class="section-title">Contáctanos para más información</h3>
+        <p class="section-body">Si quieres obtener más información sobre nuestros proyectos y cómo podemos colaborar, no dudes en ponerte en contacto con nosotros.</p>
+        <a href="contacto.html" class="btn btn-beige">CONTÁCTANOS</a>
+      </div>
+      <div class="contacto-icon" aria-hidden="true"></div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="menu-footer" aria-label="Navegación del pie de página">
+        <a href="/">INICIO</a>
+        <a href="nosotros.html">NOSOTROS</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="galeria.html">GALERÍA</a>
+        <a href="contacto.html">CONTACTO</a>
+      </nav>
+      <p class="copyright">Todos los Derechos Reservados &copy; <span id="year"></span> Creado por CARMA + <a href="https://antruc.dev" target="_blank" rel="noopener noreferrer">Antruc</a>.</p>
+    </div>
+  </footer>
+
+  <script src="/src/js/galeria.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+/* ── Banner principal ── */
+.banner-container {
+  position: relative;
+  width: 100%;
+  min-height: clamp(200px, 50vw, 700px);
+  /* background-image migrado a <img class="banner-bg"> en HTML
+     para mejor rendimiento LCP (preloader nativo + fetchpriority) */
+  overflow: hidden;
+}
+
+/* En móvil: .banner-content sale del flujo absoluto para que el contenedor
+   crezca con el texto. La imagen de fondo sigue cubriendo gracias a object-fit:cover.
+   padding-bottom reserva espacio para que el botón no quede pegado al borde. */
+@media (max-width: 767px) {
+  .banner-container {
+    min-height: clamp(380px, 120vw, 600px);
+    display: flex;
+    align-items: flex-end;
+  }
+  .banner-content {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+    padding: clamp(1.5rem, 6vw, 3rem) clamp(1rem, 5vw, 2rem);
+    padding-bottom: clamp(2rem, 8vw, 4rem);
+    width: 100%;
+  }
+}
+
+.banner-img-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+}
+
+.banner-img-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: clamp(300px, 70vw, 1400px);
+  z-index: 1;
+}
+
+.banner-content {
+  position: absolute;
+  left: clamp(20px, 5vw, 80px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #fff;
+}
+
+/* Título principal: --text-3xl da un rango 1.75→3rem, más proporcionado
+   para el texto largo "Ingeniería Forestal para un futuro sostenible".
+   Se usó --text-4xl anteriormente (2→5rem) pero resultaba excesivo en desktop. */
+.banner-content h1 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  width: min(90%, 600px);
+  margin-bottom: 1rem;
+}
+
+.banner-content h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-beige);
+  width: min(85%, 550px);
+  margin-bottom: 1.5rem;
+}
+
+/* .banner-icon movida a components.css */
+
+/* ── Bienvenida ── */
+.bienvenida-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bienvenida-container .img-div {
+  flex: 0 0 clamp(30%, 35%, 40%);
+}
+
+.bienvenida-container .texto-div {
+  flex: 1;
+  padding: 5%;
+  color: var(--color-verde);
+  text-align: justify;
+}
+
+.texto-div h3 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-2xl);
+}
+
+.texto-div h5 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-lg);
+}
+
+.texto-div p {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  padding: 2% 0 3%;
+}
+
+@media (max-width: 767px) {
+  .bienvenida-container {
+    flex-direction: column;
+  }
+}
+
+/* ── Columnas (iconos) ── */
+.columnas-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-md);
+  margin: 0 3%;
+  flex-wrap: wrap;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--color-verde);
+  flex: 1 1 180px;
+  max-width: 260px;
+}
+
+.columna img {
+  width: clamp(70px, 8vw, 160px);
+  margin-bottom: 1rem;
+}
+.columna h3 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-md);
+}
+.columna p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+}
+
+/* ── Nuestra Causa ── */
+.causas-container {
+  display: flex;
+  background-image: url('/img/fondoHojas.webp');
+  background-size: cover;
+  background-position: center;
+  margin-top: var(--gap-lg);
+}
+
+.causas {
+  flex: 1;
+  display: flex;
+}
+
+.izquierda {
+  flex: 0 0 25%;
+}
+.izquierda img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.derecha {
+  flex: 0 0 25%;
+  align-self: flex-end;
+}
+.derecha img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.centro {
+  flex-direction: column;
+  gap: var(--gap-md);
+  justify-content: center;
+  text-align: start;
+  padding-left: 8%;
+}
+
+.centro h3 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  color: var(--color-beige);
+  padding-left: 10%;
+}
+
+.lista li {
+  display: flex;
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: #fff;
+  margin-bottom: 10px;
+  padding-left: clamp(32px, 3.2vw, 48px);
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .causas-container {
+    background-image: none;
+    background-color: var(--color-verde);
+    flex-direction: column;
+  }
+  .centro {
+    align-items: center;
+    padding: 0 5% 0 1%;
+    margin-top: 20px;
+  }
+  .centro h3 {
+    padding-left: 0;
+  }
+}
+
+/* ── ¿Por qué escogernos? ── */
+/* FIX desktop: align-items:stretch en el contenedor + align-self:stretch en la imagen
+   garantizan que la foto se extienda al 100% del alto del flex, cubriendo toda la sección.
+   En móvil sigue funcionando igual porque el flex colapsa a columna. */
+.why-container {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--color-beige);
+  padding: 0 0 0 5%; /* padding-right eliminado: la imagen debe llegar al borde */
+  min-height: clamp(300px, 40vw, 600px);
+}
+
+.why-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  color: var(--color-cafe);
+  gap: var(--gap-sm);
+  padding: 3% 5% 5% 0;
+}
+
+.why-content h3 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-xl);
+}
+.why-content p {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+}
+
+.why-imagen {
+  flex: 1;
+  align-self: stretch; /* fuerza que el div hijo ocupe todo el alto del flex */
+  display: flex;
+  overflow: hidden; /* evita que la imagen desborde si es más grande */
+}
+
+.why-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .why-container {
+    flex-direction: column;
+    padding: 0 5%; /* padding simétrico en móvil */
+    min-height: unset;
+  }
+  .why-content {
+    padding: 5% 0;
+  }
+  .why-imagen {
+    min-height: 200px;
+  } /* altura mínima para que la imagen se vea en móvil */
+}
+
+/* ── Carousel de testimonios ── */
+.carousel-container {
+  position: relative;
+  background: url('/img/fondoTestimonial.webp') no-repeat center center;
+  background-size: cover;
+  padding: 8% 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  touch-action: pan-y; /* permite scroll vertical, captura swipe horizontal */
+}
+
+/* Slides */
+.carousel-track {
+  position: relative;
+  width: 100%;
+  min-height: 160px;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-beige);
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+/* El testimonio usa títulos en negrita; el autor usa cuerpo en itálica para contrastar.
+   text-shadow difuso para legibilidad sobre zonas claras del fondo. */
+.carousel-slide p {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-2xl);
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+.carousel-slide h5 {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--text-lg);
+  opacity: 0.85;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+}
+
+/* Flechas y dots: ver .nav-arrow--light y .nav-dot--light en components.css */
+
+@media (max-width: 767px) {
+  .carousel-container {
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+  }
+}

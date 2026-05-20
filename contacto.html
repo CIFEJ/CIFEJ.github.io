@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Colegio de Ingenieros Forestales de Jalisco</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon/favicon_multi.ico">
+  <link rel="stylesheet" href="/src/css/main.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-image">
+      <p>Colegio de Ingenieros Forestales<span class="inst-break">del Estado de Jalisco A.C</span></p>
+      <a href="/" aria-label="Ir al inicio"><img src="/img/logo.svg" alt="Logo del Colegio de Ingenieros Forestales"></a>
+    </div>
+    <nav class="menu" aria-label="Navegación principal">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Banner -->
+    <div class="contact-banner page-banner" data-motion="fade-up">
+      <img src="/img/bannerContacto.webp" alt="" class="banner-bg" aria-hidden="true" fetchpriority="high">
+    </div>
+
+    <!-- Mapa + Datos + Formulario -->
+    <div class="contact-container" data-motion="fade-right">
+
+      <div class="map-container">
+        <iframe
+          class="map-frame"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.572264708227!2d-103.47238252423776!3d19.688245781646526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f86920d302395%3A0xf2ed993b85c3b329!2sAv%20Gobernador%20Alberto%20Cardenas%20Jim%C3%A9nez%20650%2C%2020%20de%20Noviembre%202a.%20Etapa%2C%2049088%20Cdad.%20Guzm%C3%A1n%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1726011504072!5m2!1ses-419!2smx"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación del Colegio de Ingenieros Forestales de Jalisco">
+        </iframe>
+      </div>
+
+      <div class="info-contact-container">
+
+        <div class="contact-info">
+          <h3 class="section-title">DATOS DE CONTACTO</h3>
+          <div class="info-content">
+            <img src="/img/location.webp" alt="">
+            <div class="info-content-text">
+              <h5>Dirección</h5>
+              <p>Avenida Alberto Cárdenas Jiménez N° 650, Colonia Constituyentes, Cd. Guzmán, Jalisco</p>
+            </div>
+          </div>
+          <div class="info-content">
+            <img src="/img/phone.webp" alt="">
+            <div class="info-content-text">
+              <h5>Teléfono</h5>
+              <p><a href="tel:+523411234567">341 123 4567</a></p>
+            </div>
+          </div>
+          <div class="info-content">
+            <img src="/img/message.webp" alt="">
+            <div class="info-content-text">
+              <h5>Email</h5>
+              <p><a href="mailto:colegioingenierosforestalesjal@gmail.com">colegioingenierosforestalesjal@gmail.com</a></p>
+            </div>
+          </div>
+          <hr>
+          <p>Estamos aquí para responder a tus preguntas y brindarte la ayuda que necesitas. ¡Contáctanos hoy mismo!</p>
+        </div>
+
+        <div class="contact-form">
+          <h3 class="section-title">FORMULARIO DE CONTACTO</h3>
+          <p class="section-body">Déjanos saber en qué podemos colaborar contigo.</p>
+          <div class="form-container">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="d2b95924-e17f-457e-9aee-93aa7fdd0260">
+              <input type="text"  name="name"    placeholder="Nombre"  required autocomplete="name">
+              <input type="email" name="email"   placeholder="Correo"  required autocomplete="email">
+              <textarea           name="message" placeholder="Mensaje" required></textarea>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ / Accordion -->
+    <section class="faq-section bg-section" data-motion="fade-left" aria-label="Preguntas frecuentes">
+      <h3 class="section-title">Preguntas Frecuentes</h3>
+      <!-- El wrapper no necesita clase: contacto.js selecciona directamente .accordion-header -->
+      <div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>¿Cuánto tiempo se tarda en obtener la autorización de aprovechamiento forestal?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content" role="region">
+            <p>El tiempo de obtención de la autorización puede variar dependiendo de la complejidad del proyecto y la documentación requerida. Sin embargo, nos comprometemos a gestionar tu trámite de manera eficiente para minimizar los tiempos de espera.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>¿Cuáles son los requisitos para realizar plantaciones forestales comerciales?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content" role="region">
+            <p>Los requisitos pueden variar según el tipo de proyecto y la ubicación específica. Sin embargo, generalmente se requiere presentar un plan de plantación detallado, así como cumplir con ciertos criterios ambientales y legales establecidos por SEMARNAT.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>¿Ofrecen asesoramiento para el cambio de uso de suelo en terrenos forestales?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content" role="region">
+            <p>Sí, nuestro equipo de ingenieros forestales ofrece asesoramiento especializado para el cambio de uso de suelo en terrenos forestales, guiándote a través del proceso y asegurando que se cumplan todos los requisitos normativos y ambientales necesarios.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="menu-footer" aria-label="Navegación del pie de página">
+        <a href="/">INICIO</a>
+        <a href="nosotros.html">NOSOTROS</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="galeria.html">GALERÍA</a>
+        <a href="contacto.html">CONTACTO</a>
+      </nav>
+      <p class="copyright">Todos los Derechos Reservados &copy; <span id="year"></span> Creado por CARMA + <a href="https://antruc.dev" target="_blank" rel="noopener noreferrer">Antruc</a>.</p>
+    </div>
+  </footer>
+
+  <script src="/src/js/contacto.js" type="module"></script>
+</body>
+</html>

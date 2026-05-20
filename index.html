@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio — Colegio de Ingenieros Forestales de Jalisco</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon/favicon_multi.ico">
+  <link rel="stylesheet" href="/src/css/main.css">
+</head>
+<body>
+
+  <header>
+    <!-- FIX: data-motion="fade-down" eliminado — el header ya está en viewport al cargar;
+         Motion One lo dejaba con opacity:0 si inView no disparaba a tiempo en Android -->
+    <div class="header-image">
+      <p>Colegio de Ingenieros Forestales<span class="inst-break">del Estado de Jalisco A.C</span></p>
+      <a href="/" aria-label="Ir al inicio"><img src="/img/logo.svg" alt="Logo del Colegio de Ingenieros Forestales"></a>
+    </div>
+    <nav class="menu" aria-label="Navegación principal">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/" class="active">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Banner principal -->
+    <div class="banner-container" data-motion="fade-up">
+      <img src="/img/bannerBosque.webp" alt="" class="banner-bg" aria-hidden="true" fetchpriority="high">
+      <img src="/img/fondoBannerPrincipal.webp" alt="" class="banner-img-left" aria-hidden="true">
+      <img src="/img/ondaVerde.webp" alt="" class="banner-img-bottom" aria-hidden="true">
+      <div class="banner-content">
+        <h1 class="section-title">Ingeniería Forestal para un futuro sostenible</h1>
+        <h3 class="section-body">Construyendo un futuro verde: explora cómo estamos cultivando hoy para un mañana más verde.</h3>
+        <a href="servicios.html" class="btn btn-beige">SERVICIOS</a>
+      </div>
+      <div class="banner-icon" aria-hidden="true"></div>
+    </div>
+
+    <!-- Bienvenida -->
+    <div class="bienvenida-container" data-motion="fade-right">
+      <div class="img-div">
+        <img src="/img/bosqueEnHoja.webp" alt="Imagen del bosque en forma de hoja">
+      </div>
+      <div class="texto-div">
+        <h3 class="section-title">Bienvenido al colegio de prestadores de servicios técnicos forestales</h3>
+        <p class="section-body">El Colegio de Ingenieros Forestales del Estado de Jalisco A.C somos una institución conformada para participar y colaborar en los procesos de gestión de manejo de los recursos naturales localizados en el estado de Jalisco. Está formado por 68 ingenieros forestales que se encuentran distribuidos en las regiones del estado de Jalisco, los cuales cuentan con diversas capacidades entre ellas su registro forestal nacional que los faculta para realizar trámites de gestión en el manejo de los recursos naturales ante las instituciones del medio forestal de carácter estatal y federal e internacional, específicamente entre otras en la Elaboración, Ejecución y Evaluación de Programas de Manejo Forestal.</p>
+        <h5 class="section-title">Nuestro Colegio participa en el estado en plataformas de gestión de recursos naturales, siendo algunas de ellas:</h5>
+      </div>
+    </div>
+
+    <!-- Columnas de membresías -->
+    <div class="columnas-container" data-motion="fade-up">
+      <div class="columna">
+        <img src="/img/icono1.webp" alt="Ícono del Consejo Forestal Estatal">
+        <h3>Miembro activo en el Consejo Forestal Estatal</h3>
+        <p>Órgano consultivo y asesor en las materias que le señala la Ley General de Desarrollo Forestal Sustentable.</p>
+      </div>
+      <div class="columna">
+        <img src="/img/icono2.webp" alt="Ícono del Comité Técnico del Consejo Forestal">
+        <h3>Miembro activo del Comité Técnico del Consejo Forestal Estatal</h3>
+        <p>Órgano de asesoría, supervisión, vigilancia, evaluación y seguimiento en la aplicación de los criterios e instrumentos de política forestal.</p>
+      </div>
+      <div class="columna">
+        <img src="/img/icono3.webp" alt="Ícono del Comité Técnico de Sanidad Forestal">
+        <h3>Miembro activo en el Comité Técnico Estatal de Sanidad Forestal</h3>
+        <p>Órgano consultivo en materia de sanidad de acuerdo con lo que se le señala en la Ley General de Desarrollo Forestal Sustentable.</p>
+      </div>
+      <div class="columna">
+        <img src="/img/icono4.webp" alt="Ícono de los Comités Forestales Regionales">
+        <h3>Integrante de los Comités Forestales Regionales</h3>
+        <p>Plataforma de gestión de manejo de recursos naturales distribuidos en las diversas regiones del estado.</p>
+      </div>
+    </div>
+
+    <!-- Nuestra Causa -->
+    <div class="causas-container" data-motion="fade-left">
+      <div class="causas izquierda">
+        <img src="/img/fotoCausa1.webp" alt="Colaborador del colegio">
+      </div>
+      <div class="causas centro">
+        <h3 class="section-title">NUESTRA CAUSA</h3>
+        <ul class="lista">
+          <li>Colaborar con las instituciones federales, estatales, municipales, sociedad civil, ONG´s, OPD, etc., en implementar la sinergia de las políticas públicas en el ámbito forestal.</li>
+          <li>Asesorar a los dueños y poseedores de los recursos naturales con servicios técnicos en proyectos de conservación, manejo y uso sustentable de los recursos naturales.</li>
+          <li>Promover el uso racional y manejo sustentable de los recursos naturales en el estado de Jalisco.</li>
+        </ul>
+      </div>
+      <div class="causas derecha">
+        <img src="/img/fotoCausa2.webp" alt="Personas trabajando en campo forestal">
+      </div>
+    </div>
+
+    <!-- ¿Por qué escogernos? -->
+    <div class="why-container" data-motion="zoom-in">
+      <div class="why-content">
+        <h3 class="section-title">¿Por qué escogernos?</h3>
+        <p class="section-body">Contamos con más de 25 años de experiencia desarrollando e implementando proyectos de conservación y manejo forestal sustentable de recursos de flora y fauna silvestre, nuestros servicios técnicos forestales son de alta calidad a través de los cuales promovemos prácticas sostenibles adaptándonos a las necesidades de cada cliente. Durante el mismo tiempo hemos sido miembros de los diferentes consejos consultivos en los tres niveles de gobierno y colaboramos con la Dirección de Profesiones del Gobierno del Estado para el registro de sus miembros.</p>
+        <a href="nosotros.html" class="btn btn-verde">CONOCE MÁS</a>
+      </div>
+      <div class="why-imagen">
+        <img src="/img/fotoHojaCafe.webp" alt="Hoja de árbol café">
+      </div>
+    </div>
+
+    <!-- Testimonios -->
+    <div class="carousel-container" data-motion="fade-up">
+      <div class="testimonial-icon" aria-hidden="true"></div>
+      <div style="width:100%">
+        <div class="carousel-track">
+          <div class="carousel-slide active">
+            <p>"La Asociación de Ingenieros Forestales ha sido fundamental para mejorar nuestras prácticas forestales. Recomiendo esta asociación a todos los profesionales comprometidos con el cuidado responsable de nuestros bosques."</p>
+            <h5>&ndash; Javier Rodríguez, Gerente forestal</h5>
+          </div>
+          <div class="carousel-slide">
+            <p>"Gracias a su apoyo y asesoría, hemos logrado implementar prácticas de manejo forestal más efectivas en nuestras áreas de trabajo. Su equipo es confiable y altamente capacitado."</p>
+            <h5>&ndash; Isandro Méndez, Coordinador de Programas Ambientales</h5>
+          </div>
+          <div class="carousel-slide">
+            <p>"Excelente atención y resultados más allá de mis expectativas."</p>
+            <h5>&ndash; Zara Montoya, Directora de Estrategias Ecológicas</h5>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow nav-arrow nav-arrow--light prev" aria-label="Testimonio anterior">‹</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot nav-dot nav-dot--light active" aria-label="Testimonio 1"></button>
+            <button class="carousel-dot nav-dot nav-dot--light" aria-label="Testimonio 2"></button>
+            <button class="carousel-dot nav-dot nav-dot--light" aria-label="Testimonio 3"></button>
+          </div>
+          <button class="carousel-arrow nav-arrow nav-arrow--light next" aria-label="Siguiente testimonio">›</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="menu-footer" aria-label="Navegación del pie de página">
+        <a href="/">INICIO</a>
+        <a href="nosotros.html">NOSOTROS</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="galeria.html">GALERÍA</a>
+        <a href="contacto.html">CONTACTO</a>
+      </nav>
+      <p class="copyright">Todos los Derechos Reservados &copy; <span id="year"></span> Creado por CARMA + <a href="https://antruc.dev" target="_blank" rel="noopener noreferrer">Antruc</a>.</p>
+    </div>
+  </footer>
+
+  <script src="/src/js/home.js" type="module"></script>
+</body>
+</html>

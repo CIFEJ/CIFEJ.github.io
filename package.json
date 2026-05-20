@@ -1,0 +1,27 @@
+{
+  "name": "ingenierosforestales",
+  "version": "1.0.0",
+  "description": "Sitio web del Colegio de Ingenieros Forestales del Estado de Jalisco A.C.",
+  "type": "module",
+  "scripts": {
+    "prettier": "bunx prettier src --check",
+    "lint": "bunx eslint src",
+    "format": "bun run lint -- --fix && bun run prettier -- --write",
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/nunito": "^5.0.0",
+    "@fontsource-variable/raleway": "^5.0.0",
+    "motion": "^12.38.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "vite": "^8.0.13"
+  }
+}

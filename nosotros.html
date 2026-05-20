@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros — Colegio de Ingenieros Forestales de Jalisco</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon/favicon_multi.ico">
+  <link rel="stylesheet" href="/src/css/main.css">
+</head>
+<body>
+
+  <header>
+    <!-- FIX: data-motion="fade-down" eliminado — el header ya está en viewport al cargar;
+         Motion One lo dejaba con opacity:0 si inView no disparaba a tiempo en Android -->
+    <div class="header-image">
+      <p>Colegio de Ingenieros Forestales<span class="inst-break">del Estado de Jalisco A.C</span></p>
+      <a href="/" aria-label="Ir al inicio"><img src="/img/logo.svg" alt="Logo del Colegio de Ingenieros Forestales"></a>
+    </div>
+    <nav class="menu" aria-label="Navegación principal">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="nosotros.html" class="active">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Banner -->
+    <div class="nosotros-banner page-banner" data-motion="fade-up">
+      <img src="/img/bannerNosotros.webp" alt="" class="banner-bg" aria-hidden="true" fetchpriority="high">
+    </div>
+
+    <!-- Historia -->
+    <div class="nosotros-container">
+      <div class="historia-container" data-motion="fade-right">
+        <div class="historia-content">
+          <h3 class="section-title">Nuestra historia</h3>
+          <p class="section-body">Constituidos el 21 de enero de 1999 el Colegio de Ingenieros Forestales del Estado de Jalisco surge para dar voz a la actividad forestal. El padrón original consistía en 34 asociados, sin embargo, ha habido incorporaciones a lo largo de estos 25 años por lo que actualmente se cuentan con 68 miembros. Desde entonces, hemos trabajado incansablemente por la gestión sostenible de nuestros recursos, para proteger y conservar nuestros ecosistemas.</p>
+        </div>
+        <div class="historia-img" data-motion="fade-left">
+          <img src="/img/fotografiaCirculo.webp" alt="Fotografía de ingenieros forestales">
+        </div>
+      </div>
+    </div>
+
+    <!-- quienes-wrapper: agrupa .seccion-titulo + .somos-container + .identidad-container
+         bajo un único background-image del helicóptero, evitando el corte visual
+         que ocurría cuando sólo .seccion-titulo tenía el fondo. -->
+    <div class="quienes-wrapper">
+
+    <!-- Título "Quienes somos" — fondo gestionado por el wrapper padre -->
+    <div class="seccion-titulo" data-motion="zoom-in">
+      <h2>Quiénes somos</h2>
+    </div>
+
+    <!-- Párrafos "somos" -->
+    <div class="somos-container" data-motion="fade-up">
+      <div class="parrafo">
+        <p>Nuestro Colegio de Ingenieros Forestales de Jalisco A.C está conformado por ingenieros forestales dedicados a la gestión sostenible de los recursos forestales en el estado de Jalisco; con experiencia y compromiso en promover e impulsar en diversas plataformas de gestión y en campo las prácticas sustentables de uso, manejo y conservación de los bosques.</p>
+      </div>
+      <div class="parrafo">
+        <p>Somos un órgano colegiado del Estado de Jalisco, unido, responsable, orgulloso de su historia y sus valores; que busca el bienestar de sus generaciones actuales y futuras, a través del uso y manejo sustentable de los recursos naturales, con voluntad, responsabilidad, inclusión, equidad y confianza.</p>
+      </div>
+    </div>
+
+    <!-- Misión y Visión -->
+    <div class="identidad-container">
+      <div class="identidad-content identidad-mision" data-motion="flip-left">
+        <h3>Misión</h3>
+        <p>Promover la gestión sostenible de los recursos forestales en Jalisco, otorgando nuestra opinión Colegiada y los servicios técnicos especializados en manejo, conservación y restauración de los ecosistemas forestales, así como impulsar la formulación y ejecución de políticas públicas acorde a las necesidades actuales de manejo de los bosques. De igual manera, procurar la autorregulación de sus miembros en cuanto a su actuación profesional.</p>
+      </div>
+      <div class="identidad-content identidad-vision" data-motion="flip-right">
+        <h3>Visión</h3>
+        <p>Ser líderes en la implementación de prácticas sostenibles de manejo y conservación de los recursos forestales en Jalisco, contribuyendo activamente al desarrollo integral y sustentable de nuestros territorios forestales, siendo un referente en la implementación de prácticas innovadoras y efectivas para enfrentar los desafíos del cambio climático, al mismo tiempo buscando el bienestar de la sociedad actual y de sus generaciones futuras.</p>
+      </div>
+    </div>
+
+    </div><!-- /quienes-wrapper -->
+
+    <div class="vineta-container" data-motion="fade-up" aria-hidden="true"></div>
+
+    <!-- FIX: equipo-titulo y equipo-container ahora dentro de equipo-wrapper,
+         que es el único elemento con background-image. Antes cada uno tenía
+         su propia instancia del fondo con background-position distinto,
+         produciendo un corte visual entre ellos. -->
+    <div class="equipo-wrapper">
+      <div class="equipo-titulo">
+        <h3 class="section-title">Nuestro equipo</h3>
+        <p class="section-body">Conoce a nuestro equipo de ingenieros forestales, líderes en la gestión sostenible de los recursos naturales en Jalisco.</p>
+      </div>
+      <div class="equipo-container">
+        <div class="card-scroll" data-motion="fade-left">
+          <div class="scroll-content">
+            <p class="name-scroll">ABRAHAM AGUIRRE VERDUZCO</p>
+            <p class="name-scroll">ADOLFO ARECHIGA GUZMAN</p>
+            <p class="name-scroll">ALBERTO SANCHEZ RAMIREZ</p>
+            <p class="name-scroll">ALEJANDO MARTINEZ RAMIREZ</p>
+            <p class="name-scroll">ALDO ORTEGA CATTANEO</p>
+            <p class="name-scroll">ALDO RIVERA RAMOS (PRESIDENTE)</p>
+            <p class="name-scroll">ALFREDO ZEPEDA SANCHEZ (TESORERO SUPLENTE)</p>
+            <p class="name-scroll">ANTONIO MORA SANTACRUZ</p>
+            <p class="name-scroll">ARIEL CORREA ARREOLA</p>
+            <p class="name-scroll">ARISTEO FRANCISCO BARRIOS RIVERA</p>
+            <p class="name-scroll">ARMANDO CARDENAS MARTIN DEL CAMPO</p>
+            <p class="name-scroll">ARMANDO LOMELI JIMENEZ</p>
+            <p class="name-scroll">ARNOLDO URIBE RODRIGUEZ</p>
+            <p class="name-scroll">ARNULFO RAMOS MATA</p>
+            <p class="name-scroll">ARTURO OCEGUEDA PARRA</p>
+            <p class="name-scroll">ARTURO SANCHEZ VIELMAS</p>
+            <p class="name-scroll">BALTAZAR RODRIGUEZ COMPARAM</p>
+            <p class="name-scroll">BENITO LABRADO LOPEZ</p>
+            <p class="name-scroll">CARLOS HERNANDEZ DIAZ</p>
+            <p class="name-scroll">EDGAR ADRIAN GOMEZ DEL CASTILLO</p>
+            <p class="name-scroll">GLORIA IÑIGUEZ HERRERA</p>
+            <p class="name-scroll">FIDEL JIMENEZ MORA</p>
+            <p class="name-scroll">FRANCISCO JAVIER CAMPOS SOLANO</p>
+            <p class="name-scroll">GERARDO GRANADOS MORALES</p>
+            <p class="name-scroll">GONZALO MILLAN CURIEL ALCARAZ</p>
+            <p class="name-scroll">GUILLERMO RAMOS PINTO</p>
+            <p class="name-scroll">HUGO LOPEZ EQUIHUA</p>
+            <p class="name-scroll">HECTOR JULIAN GUZMAN CORTEZ</p>
+            <p class="name-scroll">IGNACIO TOVAR CORTEZ</p>
+            <p class="name-scroll">JOSE ANTONIO VIAYRA RAMIREZ</p>
+            <p class="name-scroll">JAIME BOCANEGRA GALLEGOS</p>
+            <p class="name-scroll">JOSE JORGE ORTIZ ESQUIVEL</p>
+            <p class="name-scroll">JOSE CARLOS CORTES CARRILLO</p>
+            <p class="name-scroll">JOSE FELIX PIEDRA SANDOVAL</p>
+            <p class="name-scroll">JOSE JUAN RAMIREZ MARTINEZ</p>
+            <p class="name-scroll">JOSE LUIS GAMEZ VALDIVIA</p>
+            <p class="name-scroll">JOSE LUIS RAZURA GONZALEZ</p>
+            <p class="name-scroll">JOSE SAMUEL GARCIA ROBLES</p>
+            <p class="name-scroll">JOSE TRINIDAD CARRILLO LEDESMA (SECRETARIO)</p>
+            <p class="name-scroll">JUAN JOSE FAJARDO ACEVES</p>
+            <p class="name-scroll">JUAN PABLO CORTÉS VÁZQUEZ</p>
+            <p class="name-scroll">JUAN SALAS JIMENEZ</p>
+            <p class="name-scroll">JUAN VALENCIA GARCIA</p>
+            <p class="name-scroll">JUVENAL RODRIGUEZ VILLICAÑA</p>
+            <p class="name-scroll">LETICIA RAMIREZ HUERTA</p>
+            <p class="name-scroll">LUIS ALFONSO HUESO PLAZOLA</p>
+            <p class="name-scroll">LUIS ANTONIO ACEVES MONTAÑO</p>
+            <p class="name-scroll">LUIS HECTOR MACIAS MACIAS</p>
+            <p class="name-scroll">MANUEL PEREZ GOMEZ</p>
+            <p class="name-scroll">OSCAR RAUL JAUREGUI ORTIZ</p>
+            <p class="name-scroll">QUETZALPILLI ROBLES SARAY (VICEPRESIDENTE)</p>
+            <p class="name-scroll">RAUL MICHEL JIMENEZ</p>
+            <p class="name-scroll">RENE HUMBERTO BECERRA ESPINOZA</p>
+            <p class="name-scroll">ROBERTO PEREZ MURILLO</p>
+            <p class="name-scroll">ROBERTO TRUJILLO SANCHEZ (SECRETARIO)</p>
+            <p class="name-scroll">SALVADOR JUAREZ CASTILLO</p>
+            <p class="name-scroll">SAUL MORENO GOMEZ</p>
+            <p class="name-scroll">WILFRIDO VARGAS VARGAS</p>
+            <p class="name-scroll">VICTOR MANUEL GARCIA FLORES (TESORERO)</p>
+            <p class="name-scroll">RAMON MICHEL SANDOVAL</p>
+            <p class="name-scroll">FERNANDO SOTO HERRERA</p>
+            <p class="name-scroll">MARTIN MENDOZA BRISEÑO</p>
+            <p class="name-scroll">DIEGO RICARDO CHAVEZ ROMO</p>
+            <p class="name-scroll">GERARDO ALBERTO GONZALEZ CUEVA</p>
+            <p class="name-scroll">JOSE DE JESUS ACEVES MONTAÑO</p>
+            <p class="name-scroll">LUCIO ALFREDO GARCIA GARCIA</p>
+            <p class="name-scroll">JOSE ORLANDO ENRIQUEZ PINTOR</p>
+            <p class="name-scroll">JOSE LUIS BUENROSTRO GONZALEZ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Únete -->
+    <div class="contacto-container" data-motion="zoom-in">
+      <div class="contacto-content">
+        <h3 class="section-title">Únete a nuestro equipo</h3>
+        <p class="section-body">¡Tu pasión por la ingeniería forestal es la pieza que nos falta para hacer la diferencia!</p>
+        <a href="contacto.html" class="btn btn-beige">CONTÁCTANOS</a>
+      </div>
+      <div class="contacto-icon" aria-hidden="true"></div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="menu-footer" aria-label="Navegación del pie de página">
+        <a href="/">INICIO</a>
+        <a href="nosotros.html">NOSOTROS</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="galeria.html">GALERÍA</a>
+        <a href="contacto.html">CONTACTO</a>
+      </nav>
+      <p class="copyright">Todos los Derechos Reservados &copy; <span id="year"></span> Creado por CARMA + <a href="https://antruc.dev" target="_blank" rel="noopener noreferrer">Antruc</a>.</p>
+    </div>
+  </footer>
+
+  <script src="/src/js/nosotros.js" type="module"></script>
+</body>
+</html>

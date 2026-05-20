@@ -1,0 +1,229 @@
+/* .contact-banner extiende .page-banner — sobreescribe solo la altura */
+.contact-banner {
+  height: clamp(150px, 30vw, 500px);
+}
+
+.contact-container {
+  width: 80%;
+  max-width: 1300px;
+  margin: clamp(30px, 5vw, 60px) auto;
+}
+
+/* ── Mapa ── */
+.map-container {
+  margin-bottom: clamp(30px, 5vw, 60px);
+  border: 5px solid var(--color-verde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map-frame {
+  width: 100%;
+  height: clamp(150px, 25vw, 400px);
+  border: none;
+}
+
+/* ── Info + Formulario ── */
+.info-contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap-md);
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.contact-info h3 {
+  font-size: var(--text-xl);
+  margin-bottom: 5%;
+}
+
+.contact-form h3 {
+  font-size: var(--text-xl);
+  margin-bottom: 5%;
+}
+
+.contact-form > p {
+  margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.info-content {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--gap-sm);
+}
+
+.info-content img {
+  width: clamp(35px, 4vw, 60px);
+  height: auto;
+  margin-right: 5%;
+}
+.info-content h5 {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-md);
+}
+.info-content p,
+.contact-info p {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  overflow-wrap: break-word;
+}
+.info-content a {
+  color: inherit;
+}
+
+/* Evita que el texto largo (email) desborde el flex item.
+   min-width:0 permite que el navegador comprima .info-content-text
+   por debajo de su contenido intrínseco y overflow-wrap actúe. */
+.info-content-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Formulario */
+.form-container {
+  background: linear-gradient(
+    to bottom right,
+    var(--color-verde),
+    rgba(32, 64, 50, 0.1)
+  );
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 5%;
+  border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Foco: borde verde tenue para indicar campo activo */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-verde);
+  box-shadow: 0 0 0 3px rgba(32, 64, 50, 0.15);
+}
+
+/* Válido: el usuario escribió algo y pasa la validación.
+   :not(:placeholder-shown) evita mostrar el estado en campos vacíos
+   que el usuario aún no ha tocado. */
+.contact-form input:not(:placeholder-shown):valid,
+.contact-form textarea:not(:placeholder-shown):valid {
+  border-color: #3a8a5c;
+}
+
+/* Inválido: el usuario escribió algo pero no pasa la validación */
+.contact-form input:not(:placeholder-shown):invalid,
+.contact-form textarea:not(:placeholder-shown):invalid {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 40%;
+  padding: 10px;
+  background-color: var(--color-verde);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: rgba(32, 64, 50, 0.6);
+}
+
+/* .faq-section extiende .bg-section — solo propiedades específicas */
+.faq-section {
+  background-image: url('/img/fondoQuestions.webp');
+  min-height: clamp(360px, 50vw, 1100px);
+  padding: clamp(40px, 7vw, 100px);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Desktop: el min-height fijo genera espacio sobrante tras el último acordeón.
+   Se sobreescribe para que la sección solo crezca según su contenido. */
+@media (min-width: 768px) {
+  .faq-section {
+    min-height: unset;
+    padding-bottom: clamp(40px, 5vw, 70px);
+  }
+}
+
+.faq-section h3 {
+  font-size: var(--text-2xl);
+  color: var(--color-beige);
+  margin-bottom: 5%;
+}
+
+.accordion-item {
+  font-family: var(--font-body);
+  color: var(--color-beige);
+}
+
+.accordion-header {
+  background: transparent;
+  width: 100%;
+  padding: 15px;
+  text-align: justify;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-beige);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: rgba(32, 64, 50, 0.8);
+}
+
+.accordion-icon {
+  font-family: var(--font-titles);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  margin-left: 5%;
+  flex-shrink: 0;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+  font-size: var(--text-md);
+  text-align: justify;
+}
+
+.accordion-content p {
+  margin: 5px 10px 10px;
+}
