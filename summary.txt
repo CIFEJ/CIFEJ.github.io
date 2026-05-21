@@ -540,6 +540,24 @@ Fecha: mayo 2026
 2. Mapeo de estructura del proyecto añadido a los archivos
    del proyecto como referencia de sesión.
 
+3. Ruta local del proyecto: %USERPROFILE%\Downloads\CIFEJ.github.io
+
+4. Content Security Policy añadido a los 6 HTMLs:
+   - index, nosotros, servicios, galeria, 404:
+       default-src 'self'; style-src 'self' 'unsafe-inline';
+       img-src 'self' data:; base-uri 'self'
+   - contacto.html incluye además frame-src, connect-src y
+     form-action para el iframe de Google Maps y Web3Forms.
+   - style-src requiere 'unsafe-inline' por Motion One, que
+     aplica estilos directamente sobre el DOM al animar.
+   - script-src y font-src omitidos en los 5 HTMLs simples:
+     quedan cubiertos por default-src 'self' sin necesidad
+     de declararlos explícitamente.
+   - frame-ancestors no incluido: no funciona vía meta tag,
+     solo vía header HTTP (no disponible en GitHub Pages).
+   - Advertencias CSP en contacto provienen del iframe de
+     Google Maps (CSP interno de Google), no del sitio.
+
 
 PENDIENTES ABIERTOS
 ------------------------------------------------------------
