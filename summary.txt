@@ -512,23 +512,38 @@ Fecha: mayo 2026
    en contacto.html.
 
 
+VERSIÓN 1.0 — Optimización de assets y documentación
+------------------------------------------------------------
+Fecha: mayo 2026
+
+1. Compresión de assets — 8 imágenes recomprimidas al 60–70%:
+   Los fondos y banners de mayor peso se exportaron originalmente
+   al 80–90% de calidad, innecesario para imágenes usadas como
+   background-size:cover o con contenido superpuesto.
+   Ninguna imagen requirió redimensionado — los 1490px de ancho
+   de los fondos son el mínimo sensato para pantallas 1440–1920px,
+   y las fotos de contenido ya estaban en dimensiones ajustadas.
+   bannerNosotros.webp se mantuvo sin comprimir por contener
+   texto legible que requiere calidad de imagen alta.
+
+   Resultados (antes → después):
+     fondoHelicoptero.webp   1,024 KB → 152 KB  (−85%)
+     bannerBosque.webp         657 KB → 175 KB  (−73%)
+     fondoEquipo.webp          654 KB → 162 KB  (−75%)
+     fondoTestimonial.webp     607 KB → 157 KB  (−74%)
+     bannerServicios.webp      428 KB → 138 KB  (−67%)
+     fondoBannerPrincipal.webp 389 KB →  77 KB  (−80%)
+     fotoHojaCafe.webp         275 KB →  98 KB  (−64%)
+     fotografiaCirculo.webp    339 KB →  93 KB  (−72%)
+     Total: 4,373 KB → 1,052 KB (−3,321 KB, −76%)
+
+2. Mapeo de estructura del proyecto añadido a los archivos
+   del proyecto como referencia de sesión.
+
+
 PENDIENTES ABIERTOS
 ------------------------------------------------------------
 
 Funcionalidades:
   [ ] Definir backend para formulario de contacto (Web3Forms ya
       integrado con access_key, pendiente confirmar o reemplazar)
-
-Decidido / descartado:
-  [x] Filtros interactivos en galería — DESCARTADO, no se implementarán
-  [x] SPA (single HTML + render por JS) — DESCARTADO, no justificado
-      para este proyecto (SEO, LCP, complejidad vs. beneficio)
-  [x] Split de CSS por página — DESCARTADO por ahora, el bundle único
-      es aceptable dado el tamaño actual del proyecto
-  [x] Duplicidad de header/footer en los 5 HTMLs — ACEPTADA por ahora
-  [x] Migrar bundler de esbuild a Vite — COMPLETADO
-  [x] Self-hosting de Google Fonts (Raleway + Nunito) — COMPLETADO
-  [x] Renombrar assets con ñ en el nombre — COMPLETADO
-  [x] logo.svg con raster embebido — COMPLETADO (rehecho como vector)
-  [x] 7 fondos SVG convertidos a WebP — COMPLETADO
-  [x] img/galeria/ comprimida — COMPLETADO
