@@ -1,11 +1,11 @@
 CIFEJ.github.io/
 │
-├── 📄 index.html               (9.2 KB)
-├── 📄 nosotros.html            (11.4 KB)
-├── 📄 servicios.html           (9.8 KB)
-├── 📄 galeria.html             (12.4 KB)
-├── 📄 contacto.html            (7.1 KB)
-├── 📄 404.html                 (2.1 KB)
+├──  index.html               (9.2 KB)
+├──  nosotros.html            (11.3 KB)
+├──  servicios.html           (9.8 KB)
+├──  galeria.html             (12.4 KB)
+├──  contacto.html            (7.2 KB)
+├──  404.html                 (2.2 KB)
 │
 ├── src/
 │   ├── css/
@@ -36,36 +36,39 @@ CIFEJ.github.io/
 │       │
 │       ├── [banners]
 │       │   ├── bannerBosque.webp           (175 KB)
-│       │   ├── bannerNosotros.webp         (253 KB)
+│       │   ├── bannerNosotros.webp         (254 KB)
 │       │   ├── bannerServicios.webp        (138 KB)
 │       │   ├── bannerGaleria.webp          (195 KB)
-│       │   └── bannerContacto.webp         (211 KB)
+│       │   └── bannerContacto.webp         (212 KB)
 │       │
 │       ├── [fondos]
 │       │   ├── fondoBannerPrincipal.webp   (77 KB)
-│       │   ├── fondoHelicoptero.webp       (152 KB)
+│       │   ├── fondoHelicoptero.webp       (153 KB)
 │       │   ├── fondoEquipo.webp            (162 KB)
 │       │   ├── fondoTestimonial.webp       (157 KB)
 │       │   ├── fondoHojas.webp             (88 KB)
-│       │   ├── fondoContacto.webp          (162 KB)
-│       │   ├── fondoGaleria.webp           (86 KB)
+│       │   ├── fondoContacto.webp          (163 KB)
+│       │   ├── fondoGaleria.webp           (87 KB)
 │       │   ├── fondoQuestions.webp         (186 KB)
 │       │   └── fondoServicios.webp         (23 KB)
 │       │
 │       ├── [fotos]
 │       │   ├── fotografiaCirculo.webp      (93 KB)
-│       │   ├── fotoHojaCafe.webp           (98 KB)
+│       │   ├── fotoHojaCafe.webp           (99 KB)
 │       │   ├── fotoCausa1.webp             (99 KB)
-│       │   ├── fotoCausa2.webp             (119 KB)
-│       │   └── bosqueEnHoja.webp           (89 KB)
+│       │   ├── fotoCausa2.webp             (120 KB)
+│       │   └── bosqueEnHoja.webp           (90 KB)
 │       │
 │       ├── [iconos]
-│       │   ├── icono1–4.webp               (4–7 KB c/u)
+│       │   ├── icono1.webp                 (7 KB)
+│       │   ├── icono2.webp                 (6 KB)
+│       │   ├── icono3.webp                 (5 KB)
+│       │   ├── icono4.webp                 (6 KB)
 │       │   ├── icon-mision.webp            (6 KB)
 │       │   ├── icon-vision.webp            (6 KB)
-│       │   ├── location.webp               (4 KB)
+│       │   ├── location.webp               (5 KB)
 │       │   ├── phone.webp                  (4 KB)
-│       │   └── message.webp                (4 KB)
+│       │   └── message.webp                (5 KB)
 │       │
 │       ├── [decorativos]
 │       │   ├── vinetaBeige.webp            (448 B)
@@ -78,11 +81,11 @@ CIFEJ.github.io/
 │       └── galeria/
 │           ├── Aprovechamiento/            (6 imgs,  ~1.0 MB)
 │           ├── Fuego/                      (5 imgs,  ~586 KB)
-│           ├── Inventarios/                (13 imgs, ~2.0 MB)
+│           ├── Inventarios/                (15 imgs, ~2.4 MB)
 │           ├── Plagas/                     (6 imgs,  ~514 KB)
 │           ├── Reforestacion/              (9 imgs,  ~1.5 MB)
-│           └── Transformacion/             (15 imgs, ~1.3 MB)
-│                                           54 imgs totales, ~6.9 MB
+│           └── Transformacion/             (15 imgs, ~1.5 MB)
+│                                           56 imgs totales, ~7.9 MB
 │
 ├── .github/
 │   └── workflows/
@@ -92,5 +95,7 @@ CIFEJ.github.io/
 ├── eslint.config.js            (308 B)
 ├── package.json                (760 B)
 ├── bun.lock                    (30.5 KB)
-├── summary.txt                 (25.2 KB)
+├── map.txt
+├── summary.txt                 (5.7 KB)
+├── CHANGELOG.md                (27.2 KB)
 └── README.md                   (185 B)
