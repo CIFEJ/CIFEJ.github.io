@@ -4,6 +4,7 @@ Sitio web institucional — Estado actual del proyecto
 Versión: 1.0  |  Última actualización: mayo 2026
 Historial completo de cambios: CHANGELOG.md
 Mapa de estructura de archivos: map.txt
+Ruta local del proyecto: %USERPROFILE%\Downloads\CIFEJ.github.io
 
 
 STACK
