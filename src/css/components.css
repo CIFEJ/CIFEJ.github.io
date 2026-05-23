@@ -159,8 +159,6 @@
 }
 
 /* ── Header ── */
-/* FIX: opacity siempre visible — data-motion eliminado del header en todos los HTMLs
-   para evitar que Motion One lo deje con opacity:0 si inView no dispara a tiempo */
 .header-image {
   display: flex;
   justify-content: flex-end;
@@ -170,7 +168,6 @@
   flex-wrap: wrap;
   background-color: var(--color-beige);
   gap: var(--gap-sm);
-  opacity: 1 !important; /* seguro ante cualquier residuo de animación */
 }
 
 /* Link del logo — solo el <a> que envuelve el img hereda el cursor y elimina decoración */
