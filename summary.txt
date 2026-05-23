@@ -1,7 +1,7 @@
 COLEGIO DE INGENIEROS FORESTALES DEL ESTADO DE JALISCO A.C.
 Sitio web institucional — Estado actual del proyecto
 ============================================================
-Versión: 1.0  |  Última actualización: mayo 2026
+Versión: 1.1  |  Última actualización: mayo 2026
 Historial completo de cambios: CHANGELOG.md
 Mapa de estructura de archivos: map.txt
 Ruta local del proyecto: %USERPROFILE%\Downloads\CIFEJ.github.io
@@ -97,6 +97,32 @@ CONVENCIONES Y DECISIONES VIGENTES
 - Formulario de contacto: Web3Forms integrado (action + access_key en contacto.html)
 
 
+SEO
+------------------------------------------------------------
+Meta tags implementadas en v1.1. Estructura por página:
+  - <meta name="description">  — texto único por página
+  - <meta name="author">       — nombre completo de la institución
+  - <meta name="robots">       — index/follow en las 5 páginas principales;
+                                  noindex/nofollow en 404.html
+  - <link rel="canonical">     — dominio base: https://cifej.github.io
+                                  URLs sin extensión .html (comportamiento
+                                  confirmado de GitHub Pages)
+  Open Graph: og:type, og:site_name, og:title, og:description,
+              og:url, og:image, og:locale (es_MX)
+  Twitter Card: summary_large_image + title, description, image
+
+  Imágenes OG: banners WebP existentes por página. WebP es compatible
+  con crawlers modernos; WhatsApp y algunos crawlers heredados
+  prefieren JPG/PNG.
+  PENDIENTE: evaluar imagen OG dedicada (og-image.jpg, 1200×630 px)
+  para máxima compatibilidad multiplataforma.
+
+  keywords omitidas — Google las ignora; no aportan valor.
+
+  Si se adopta dominio propio, actualizar canonical y og:url
+  en los 5 HTMLs indexables.
+
+
 ASSETS
 ------------------------------------------------------------
 - logo.svg: vector puro (sin raster embebido), usado en header
@@ -110,3 +136,5 @@ PENDIENTES ABIERTOS
 ------------------------------------------------------------
 [ ] Definir backend definitivo para formulario de contacto
     (Web3Forms integrado con access_key, pendiente confirmar o reemplazar)
+[ ] Evaluar imagen OG dedicada (og-image.jpg, 1200×630 px) para
+    máxima compatibilidad en redes sociales y mensajería (WhatsApp)
