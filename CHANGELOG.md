@@ -557,3 +557,49 @@ Fecha: mayo 2026
      solo vía header HTTP (no disponible en GitHub Pages).
    - Advertencias CSP en contacto provienen del iframe de
      Google Maps (CSP interno de Google), no del sitio.
+
+
+
+V1.1 — Meta properties SEO
+------------------------------------------------------------
+Fecha: mayo 2026
+
+Meta tags SEO añadidas a los 6 archivos HTML del proyecto.
+
+Cambios por archivo:
+
+  index.html, nosotros.html, servicios.html, galeria.html, contacto.html:
+    - <meta name="description"> con texto único por página.
+    - <meta name="author"> con nombre completo de la institución.
+    - <meta name="robots" content="index, follow">
+    - <link rel="canonical"> apuntando a https://cifej.github.io/[ruta]
+    - Open Graph: og:type, og:site_name, og:title, og:description,
+      og:url, og:image, og:locale (es_MX).
+    - Twitter Card: twitter:card (summary_large_image), twitter:title,
+      twitter:description, twitter:image.
+
+  404.html:
+    - Solo <meta name="robots" content="noindex, nofollow">.
+    - Sin OG, sin canonical, sin description — la página no debe
+      indexarse ni compartirse en redes sociales.
+
+Decisiones y anotaciones:
+
+  - keywords omitidas intencionalmente. Google las ignora desde hace
+    más de una década; incluirlas solo añadiría ruido al <head>.
+
+  - Imágenes OG: se usan los banners WebP existentes por página
+    (bannerBosque, bannerNosotros, bannerServicios, bannerGaleria,
+    bannerContacto). WebP es compatible con la mayoría de crawlers
+    modernos (Google, Facebook, LinkedIn). WhatsApp y algunos
+    crawlers heredados prefieren JPG/PNG.
+    PENDIENTE: evaluar si crear una imagen OG dedicada (og-image.jpg,
+    1200×630 px) para máxima compatibilidad multiplataforma.
+
+  - Canonical: dominio https://cifej.github.io usado de forma
+    provisional. Actualizar en todos los HTMLs si se adopta
+    dominio propio.
+
+  - El CSP existente no requiere ajustes: las imágenes OG las
+    leen los crawlers directamente desde la URL pública; no se
+    cargan en el navegador del usuario.
