@@ -87,7 +87,9 @@ CONVENCIONES Y DECISIONES VIGENTES
 - Paths de imágenes: absolutos desde raíz (/img/...) — Vite no resuelve relativos desde src/css/
 - Animaciones Motion One: estado inicial en CSS ([data-motion].motion-pending { opacity:0 }),
   clase añadida en JS antes de inView y removida justo antes de animar (evita FOUC)
-- data-motion no se usa en .header-image (opacity:1 !important como defensa adicional)
+- data-motion nunca debe usarse en elementos que estén en el viewport al cargar
+  (header, banners de inicio de página) — inView no dispara de forma fiable
+  en ese contexto y el elemento puede quedar con opacity:0
 - background-attachment: scroll en quienes-wrapper — 'fixed' falla en iOS
 - color-scheme: light en body — previene fondos grises en navegadores con dark mode del SO
 - Fuentes variables Fontsource: Raleway sin itálica (no hay uso en el sitio),
