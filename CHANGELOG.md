@@ -560,7 +560,7 @@ Fecha: mayo 2026
 
 
 
-V1.1 — Meta properties SEO
+V1.1 — Meta properties SEO + ajuste de animaciones de banners
 ------------------------------------------------------------
 Fecha: mayo 2026
 
@@ -603,3 +603,25 @@ Decisiones y anotaciones:
   - El CSP existente no requiere ajustes: las imágenes OG las
     leen los crawlers directamente desde la URL pública; no se
     cargan en el navegador del usuario.
+
+Eliminación del fade-up en banners de inicio de página.
+
+  index.html    → .banner-container
+  nosotros.html → .nosotros-banner
+  servicios.html → .servicios-banner
+  galeria.html  → .galeria-banner
+  contacto.html → .contact-banner
+
+  Todos tenían data-motion="fade-up". El atributo fue eliminado en los 5
+  archivos. Al estar en el viewport desde el primer render, la animación
+  dependía del timing entre inView y el paint inicial — el mismo bug que
+  ya había motivado quitar data-motion del header en Beta 2/3. Sin el
+  atributo, los banners aparecen inmediatamente en su estado CSS natural;
+  el loop de animaciones en main.js los ignora por completo.
+
+Eliminación de opacity:1 !important en .header-image (components.css):
+
+  La declaración y su comentario FIX eran una defensa ante la presencia de
+  data-motion en el header, que ya fue eliminado. Sin data-motion, Motion One
+  nunca toca .header-image y el !important no tiene efecto real. Eliminado
+  junto con el comentario para mantener el CSS limpio.
