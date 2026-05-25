@@ -560,7 +560,8 @@ Fecha: mayo 2026
 
 
 
-V1.1 — Meta properties SEO + ajuste de animaciones de banners
+V1.1 — Meta properties SEO + ajuste de animaciones de banners +
+        fetchpriority en banner principal
 ------------------------------------------------------------
 Fecha: mayo 2026
 
@@ -625,3 +626,33 @@ Eliminación de opacity:1 !important en .header-image (components.css):
   data-motion en el header, que ya fue eliminado. Sin data-motion, Motion One
   nunca toca .header-image y el !important no tiene efecto real. Eliminado
   junto con el comentario para mantener el CSS limpio.
+
+fetchpriority diferenciado en las tres imágenes del banner principal.
+
+  Problema: en algunos navegadores las tres imágenes del .banner-container
+  (index.html) cargaban en tiempos distintos, produciendo un efecto visual
+  indeseable donde las capas del banner aparecían de forma escalonada.
+
+  Causa raíz: fondoBannerPrincipal y ondaVerde no tenían atributo
+  fetchpriority, por lo que el navegador las trataba como recursos de
+  prioridad media junto con el resto de imágenes de la página.
+
+  Solución — jerarquía de prioridad asignada:
+    bannerBosque.webp         → fetchpriority="high"  (sin cambio)
+      LCP del sitio, fondo principal del banner.
+    fondoBannerPrincipal.webp → fetchpriority="high"  (añadido)
+      Imagen izquierda visible en viewport al cargar; merece
+      descargarse en paralelo con el LCP sin demora.
+    ondaVerde.webp            → fetchpriority="low"   (añadido)
+      27 KB, posicionada en bottom:0 — parcialmente fuera del
+      viewport en resoluciones bajas. Descarga sin competir con
+      las otras dos; llega prácticamente sin demora por su tamaño.
+
+  El criterio evita saturar el canal de alta prioridad: bannerBosque
+  conserva su ventaja como LCP y fondoBannerPrincipal se descarga en
+  paralelo, mientras ondaVerde cede paso sin retrasarse significativamente.
+  Añadido comentario inline en el HTML documentando el criterio de cada
+  valor, siguiendo el estilo de comentarios existente en el proyecto.
+
+  Archivo modificado: index.html (3 líneas en .banner-container).
+  Sin cambios en CSS, JS ni otros HTMLs.
