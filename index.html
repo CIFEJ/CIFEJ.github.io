@@ -47,10 +47,14 @@
   <main>
 
     <!-- Banner principal -->
+    <!-- fetchpriority:
+         bannerBosque      → high  (LCP, fondo principal)
+         fondoBannerPrincipal → high  (visible en viewport al cargar)
+         ondaVerde         → low   (27 KB, posición bottom — descarga sin competir con los anteriores) -->
     <div class="banner-container">
       <img src="/img/bannerBosque.webp" alt="" class="banner-bg" aria-hidden="true" fetchpriority="high">
-      <img src="/img/fondoBannerPrincipal.webp" alt="" class="banner-img-left" aria-hidden="true">
-      <img src="/img/ondaVerde.webp" alt="" class="banner-img-bottom" aria-hidden="true">
+      <img src="/img/fondoBannerPrincipal.webp" alt="" class="banner-img-left" aria-hidden="true" fetchpriority="high">
+      <img src="/img/ondaVerde.webp" alt="" class="banner-img-bottom" aria-hidden="true" fetchpriority="low">
       <div class="banner-content">
         <h1 class="section-title">Ingeniería Forestal para un futuro sostenible</h1>
         <h3 class="section-body">Construyendo un futuro verde: explora cómo estamos cultivando hoy para un mañana más verde.</h3>
