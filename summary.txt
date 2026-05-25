@@ -97,6 +97,9 @@ CONVENCIONES Y DECISIONES VIGENTES
 - Hooks JS en HTML que no tienen regla CSS propia documentados al inicio de components.css:
   .carousel-arrow, .carousel-dot (home.js) | .slider-arrow, .dot (servicios.js)
 - Formulario de contacto: Web3Forms integrado (action + access_key en contacto.html)
+- Banner principal (index.html): fetchpriority diferenciado en las tres imágenes
+  del .banner-container — bannerBosque "high" (LCP), fondoBannerPrincipal "high"
+  (visible en viewport), ondaVerde "low" (27 KB, posición bottom)
 
 
 SEO
