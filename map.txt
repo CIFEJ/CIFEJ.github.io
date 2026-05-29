@@ -1,82 +1,82 @@
 CIFEJ.github.io/
 │
-├──  index.html               (9.2 KB)
-├──  nosotros.html            (11.3 KB)
-├──  servicios.html           (9.8 KB)
-├──  galeria.html             (12.4 KB)
-├──  contacto.html            (7.2 KB)
-├──  404.html                 (2.2 KB)
+├──  index.html
+├──  nosotros.html
+├──  servicios.html
+├──  galeria.html
+├──  contacto.html
+├──  404.html
 │
 ├── src/
 │   ├── css/
-│   │   ├── main.css            (197 B)   ← punto de entrada, @imports
-│   │   ├── base.css            (1.9 KB)  ← variables, tipografía fluida
-│   │   ├── components.css      (13.2 KB) ← navbar, footer, viñetas, slider
-│   │   ├── home.css            (7.3 KB)
-│   │   ├── nosotros.css        (8.5 KB)
-│   │   ├── servicios.css       (2.5 KB)
-│   │   ├── galeria.css         (5.7 KB)
-│   │   ├── contacto.css        (4.8 KB)
-│   │   └── 404.css             (746 B)
+│   │   ├── main.css
+│   │   ├── base.css
+│   │   ├── components.css
+│   │   ├── home.css
+│   │   ├── nosotros.css
+│   │   ├── servicios.css
+│   │   ├── galeria.css
+│   │   ├── contacto.css
+│   │   └── 404.css
 │   └── js/
-│       ├── main.js             (1.8 KB)  ← initPage() compartido
-│       ├── slider.js           (2.7 KB)  ← createSlider() compartido
-│       ├── home.js             (294 B)
-│       ├── nosotros.js         (49 B)
-│       ├── servicios.js        (266 B)
-│       ├── galeria.js          (3.7 KB)
-│       ├── contacto.js         (996 B)
-│       └── 404.js              (49 B)
+│       ├── main.js
+│       ├── slider.js
+│       ├── home.js
+│       ├── nosotros.js
+│       ├── servicios.js
+│       ├── galeria.js
+│       ├── contacto.js
+│       └── 404.js
 │
 ├── public/
 │   └── img/
-│       ├── logo.svg                        (60 KB)
+│       ├── logo.svg
 │       ├── favicon/
-│       │   └── favicon_multi.ico           (16 KB)
+│       │   └── favicon_multi.ico
 │       │
 │       ├── [banners]
-│       │   ├── bannerBosque.webp           (175 KB)
-│       │   ├── bannerNosotros.webp         (254 KB)
-│       │   ├── bannerServicios.webp        (138 KB)
-│       │   ├── bannerGaleria.webp          (195 KB)
-│       │   └── bannerContacto.webp         (212 KB)
+│       │   ├── bannerBosque.webp
+│       │   ├── bannerNosotros.webp
+│       │   ├── bannerServicios.webp
+│       │   ├── bannerGaleria.webp
+│       │   └── bannerContacto.webp
 │       │
 │       ├── [fondos]
-│       │   ├── fondoBannerPrincipal.webp   (77 KB)
-│       │   ├── fondoHelicoptero.webp       (153 KB)
-│       │   ├── fondoEquipo.webp            (162 KB)
-│       │   ├── fondoTestimonial.webp       (157 KB)
-│       │   ├── fondoHojas.webp             (88 KB)
-│       │   ├── fondoContacto.webp          (163 KB)
-│       │   ├── fondoGaleria.webp           (87 KB)
-│       │   ├── fondoQuestions.webp         (186 KB)
-│       │   └── fondoServicios.webp         (23 KB)
+│       │   ├── fondoBannerPrincipal.webp
+│       │   ├── fondoHelicoptero.webp
+│       │   ├── fondoEquipo.webp
+│       │   ├── fondoTestimonial.webp
+│       │   ├── fondoHojas.webp
+│       │   ├── fondoContacto.webp
+│       │   ├── fondoGaleria.webp
+│       │   ├── fondoQuestions.webp
+│       │   └── fondoServicios.webp
 │       │
 │       ├── [fotos]
-│       │   ├── fotografiaCirculo.webp      (93 KB)
-│       │   ├── fotoHojaCafe.webp           (99 KB)
-│       │   ├── fotoCausa1.webp             (99 KB)
-│       │   ├── fotoCausa2.webp             (120 KB)
-│       │   └── bosqueEnHoja.webp           (90 KB)
+│       │   ├── fotografiaCirculo.webp
+│       │   ├── fotoHojaCafe.webp
+│       │   ├── fotoCausa1.webp
+│       │   ├── fotoCausa2.webp
+│       │   └── bosqueEnHoja.webp
 │       │
 │       ├── [iconos]
-│       │   ├── icono1.webp                 (7 KB)
-│       │   ├── icono2.webp                 (6 KB)
-│       │   ├── icono3.webp                 (5 KB)
-│       │   ├── icono4.webp                 (6 KB)
-│       │   ├── icon-mision.webp            (6 KB)
-│       │   ├── icon-vision.webp            (6 KB)
-│       │   ├── location.webp               (5 KB)
-│       │   ├── phone.webp                  (4 KB)
-│       │   └── message.webp                (5 KB)
+│       │   ├── icono1.webp
+│       │   ├── icono2.webp
+│       │   ├── icono3.webp
+│       │   ├── icono4.webp
+│       │   ├── icon-mision.webp
+│       │   ├── icon-vision.webp
+│       │   ├── location.webp
+│       │   ├── phone.webp
+│       │   └── message.webp
 │       │
 │       ├── [decorativos]
-│       │   ├── vinetaBeige.webp            (448 B)
-│       │   ├── vinetaEquipo.webp           (418 B)
-│       │   ├── vinetasBeige.webp           (1 KB)
-│       │   ├── vinetasVerdesuave.webp      (906 B)
-│       │   ├── ondaVerde.webp              (27 KB)
-│       │   └── testimOnda.webp             (14 KB)
+│       │   ├── vinetaBeige.webp
+│       │   ├── vinetaEquipo.webp
+│       │   ├── vinetasBeige.webp
+│       │   ├── vinetasVerdesuave.webp
+│       │   ├── ondaVerde.webp
+│       │   └── testimOnda.webp
 │       │
 │       └── galeria/
 │           ├── Aprovechamiento/            (6 imgs,  ~1.0 MB)
@@ -85,17 +85,15 @@ CIFEJ.github.io/
 │           ├── Plagas/                     (6 imgs,  ~514 KB)
 │           ├── Reforestacion/              (9 imgs,  ~1.5 MB)
 │           └── Transformacion/             (15 imgs, ~1.5 MB)
-│                                           56 imgs totales, ~7.9 MB
 │
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml          (1.2 KB)
+│       └── deploy.yml
 │
-├── vite.config.js              (495 B)
-├── eslint.config.js            (308 B)
-├── package.json                (760 B)
-├── bun.lock                    (30.5 KB)
+├── vite.config.js
+├── eslint.config.js
+├── package.json
+├── bun.lock
 ├── map.txt
-├── summary.txt                 (5.7 KB)
-├── CHANGELOG.md                (27.2 KB)
-└── README.md                   (185 B)
+├── summary.txt
+└── README.md
