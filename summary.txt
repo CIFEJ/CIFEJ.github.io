@@ -2,7 +2,6 @@ COLEGIO DE INGENIEROS FORESTALES DEL ESTADO DE JALISCO A.C.
 Sitio web institucional — Estado actual del proyecto
 ============================================================
 Versión: 1.1  |  Última actualización: mayo 2026
-Historial completo de cambios: CHANGELOG.md
 Mapa de estructura de archivos: map.txt
 Ruta local del proyecto: %USERPROFILE%\Downloads\CIFEJ.github.io
 
